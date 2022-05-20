@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../utils/app_colors.dart';
 import '../widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -41,8 +40,13 @@ class _WelcomePageState extends State<WelcomePage> {
     return SmoothPageIndicator(
       controller: controller,
       count: 3,
-      effect:
-          WormEffect(activeDotColor: Theme.of(context).primaryColor, paintStyle: PaintingStyle.stroke),
+      effect: WormEffect(
+        activeDotColor: Theme.of(context).primaryColor,
+        paintStyle: PaintingStyle.stroke,
+        type: WormType.thin,
+        dotHeight: 6,
+        dotWidth: 16,
+      ),
     );
   }
 

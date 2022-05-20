@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../utils/app_colors.dart';
 import '../utils/constants.dart';
 
 class ResponsiveButton extends StatelessWidget {
@@ -31,7 +30,7 @@ class ResponsiveButton extends StatelessWidget {
       minWidth: width,
       height: buttonHeight,
       onPressed: onPressed,
-      color: color,
+      color: color ?? Theme.of(context).buttonTheme.colorScheme?.primary,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
       child: Text(
         title,

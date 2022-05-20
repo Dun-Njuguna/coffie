@@ -1,4 +1,4 @@
-import 'package:coffeeapp/pages/welcome_page.dart';
+import 'package:coffeeapp/pages/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,10 +18,12 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-
   //State managers
   final _appStateManager = AppStateManager();
   final _profileManager = ProfileManager();
+
+  // App router
+  final _router = AppRouter();
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +38,17 @@ class _MainAppState extends State<MainApp> {
       ],
       child: Consumer<ProfileManager>(
         builder: (context, profileManager, child) {
-        ThemeData appTheme;
-        if (profileManager.setDarkMode) {
-          appTheme = AppTheme.dark();
-        } else {
-          appTheme = AppTheme.light();
-        }
-        return MaterialApp(
-          theme: appTheme,
-          home: const WelcomePage(),
-        );
+          ThemeData appTheme;
+          if (profileManager.setDarkMode) {
+            appTheme = AppTheme.dark();
+          } else {
+            appTheme = AppTheme.light();
+          }
+          return MaterialApp.router(
+            routeInformationParser: _router.getRouter().routeInformationParser,
+            routerDelegate: _router.getRouter().routerDelegate,
+            theme: appTheme,
+          );
         },
       ),
     );

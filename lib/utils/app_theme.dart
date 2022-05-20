@@ -70,6 +70,22 @@ class AppTheme {
     ),
   );
 
+  static ButtonThemeData lightButtonTheme = const ButtonThemeData(
+      colorScheme: ColorScheme.dark(
+        primary: AppColors.lightButtonColor,
+        secondary: AppColors.secondaryLightButtonColor,
+      ),
+      textTheme: ButtonTextTheme.normal,
+  );
+
+  static ButtonThemeData darkButtonTheme = const ButtonThemeData(
+      colorScheme: ColorScheme.dark(
+        primary: AppColors.darkButtonColor,
+        secondary: AppColors.secondaryDarkButtonColor,
+      ),
+      textTheme: ButtonTextTheme.normal,
+  );
+
   static ThemeData light() {
     return ThemeData(
       primaryColor: AppColors.lightMainColor,
@@ -91,6 +107,7 @@ class AppTheme {
         selectedItemColor: AppColors.darkMainColor,
       ),
       textTheme: lightTextTheme,
+      buttonTheme: lightButtonTheme,
     );
   }
 
@@ -110,6 +127,7 @@ class AppTheme {
         selectedItemColor: AppColors.darkMainColor,
       ),
       textTheme: darkTextTheme,
+      buttonTheme: darkButtonTheme,
     );
   }
 }

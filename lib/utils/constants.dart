@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 
 const imagesPath = "assets/images/";
 
-const List welcomeImages = [
-  imagesPath + "welcome_image_one.jpeg",
-  imagesPath + "welcome_image_two.jpeg"
+const List coffeeTypes = [
+  "Cappuccino",
+  "Latte",
+  "Americano",
+  "Espresso",
+  "Macchiato",
+  "Mocha",
+  "Ristretto",
 ];
 
 const double buttonHeight = 50;

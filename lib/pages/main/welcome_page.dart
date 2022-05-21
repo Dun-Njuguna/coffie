@@ -5,10 +5,10 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../models/OnboardingPage.dart';
-import '../widgets/custome_page_view.dart';
-import '../widgets/responsive_button.dart';
-import 'state/app_state_manager.dart';
+import '../../models/OnboardingPage.dart';
+import '../../widgets/custome_page_view.dart';
+import '../../widgets/responsive_button.dart';
+import '../state/app_state_manager.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);

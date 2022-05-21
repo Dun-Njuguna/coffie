@@ -16,8 +16,8 @@ class AppTheme {
       color: AppColors.lightTextColor,
     ),
     headline2: GoogleFonts.openSans(
-      fontSize: 16.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 24.0,
+      fontWeight: FontWeight.bold,
       color: AppColors.lightTextColor,
     ),
     headline3: GoogleFonts.openSans(
@@ -49,8 +49,8 @@ class AppTheme {
       color: AppColors.darkTextColor,
     ),
     headline2: GoogleFonts.openSans(
-      fontSize: 16.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 24.0,
+      fontWeight: FontWeight.bold,
       color: AppColors.darkTextColor,
     ),
     headline3: GoogleFonts.openSans(
@@ -103,11 +103,14 @@ class AppTheme {
         foregroundColor: Colors.white,
         backgroundColor: Colors.black,
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: AppColors.darkMainColor,
+      navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: AppColors.lightMainColor,
+        indicatorColor: AppColors.lightButtonColor,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected
       ),
       textTheme: lightTextTheme,
       buttonTheme: lightButtonTheme,
+      scaffoldBackgroundColor: AppColors.lightMainColor
     );
   }
 
@@ -123,11 +126,14 @@ class AppTheme {
         foregroundColor: Colors.white,
         backgroundColor: AppColors.darkMainColor,
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: AppColors.darkMainColor,
+      navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: AppColors.darkMainColor,
+        indicatorColor: AppColors.darkButtonColor,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected
       ),
       textTheme: darkTextTheme,
       buttonTheme: darkButtonTheme,
+      scaffoldBackgroundColor: AppColors.darkMainColor,
     );
   }
 }

@@ -44,7 +44,7 @@ class _MainAppState extends State<MainApp> {
       child: Consumer<ProfileManager>(
         builder: (context, profileManager, child) {
           ThemeData appTheme;
-          if (profileManager.setDarkMode) {
+          if (profileManager.getDarkMode) {
             appTheme = AppTheme.dark();
           } else {
             appTheme = AppTheme.light();
@@ -52,6 +52,7 @@ class _MainAppState extends State<MainApp> {
           return MaterialApp.router(
             routeInformationParser: _router.getRouter().routeInformationParser,
             routerDelegate: _router.getRouter().routerDelegate,
+            backButtonDispatcher: RootBackButtonDispatcher(),
             theme: appTheme,
           );
         },

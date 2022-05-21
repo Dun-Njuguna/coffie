@@ -1,4 +1,5 @@
 import 'package:coffeeapp/pages/navigation/app_router.dart';
+import 'package:coffeeapp/pages/state/login_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,9 +22,10 @@ class _MainAppState extends State<MainApp> {
   //State managers
   final _appStateManager = AppStateManager();
   final _profileManager = ProfileManager();
+  final _loginManager = LoginManager();
 
   // App router
-  final _router = AppRouter();
+  late final _router = AppRouter(_loginManager);
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,9 @@ class _MainAppState extends State<MainApp> {
         ),
         ChangeNotifierProvider(
           create: (context) => _profileManager,
+        ),
+        ChangeNotifierProvider(
+          create: (context) => _loginManager,
         ),
       ],
       child: Consumer<ProfileManager>(

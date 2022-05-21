@@ -1,4 +1,7 @@
+import 'package:coffeeapp/pages/navigation/app_routes.dart';
+import 'package:coffeeapp/pages/state/login_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -95,9 +98,7 @@ class _WelcomePageState extends State<WelcomePage> {
           title: "Skip",
           color: Theme.of(context).buttonTheme.colorScheme?.secondary,
           textStyle: Theme.of(context).textTheme.headline4,
-          onPressed: () {
-            // Todo implement onskip clicked
-          },
+          onPressed: () => completeOnbording(context),
         ),
         ResponsiveButton(
           width: 110,
@@ -119,7 +120,7 @@ class _WelcomePageState extends State<WelcomePage> {
       width: 300,
       title: "Get Started",
       textStyle: Theme.of(context).textTheme.headline3,
-      onPressed: () => {},
+      onPressed: () => completeOnbording(context),
     );
   }
 
@@ -133,4 +134,9 @@ class _WelcomePageState extends State<WelcomePage> {
           .showGetStartedButton(false);
     }
   }
+}
+
+void completeOnbording(BuildContext context) {
+  Provider.of<LoginManager>(context, listen: false).completeOnboarding();
+  context.go(AppRoutes.home);
 }

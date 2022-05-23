@@ -25,7 +25,7 @@ class _MainAppState extends State<MainApp> {
   final _loginManager = LoginManager();
 
   // App router
-  late final _router = AppRouter(_loginManager);
+  late final _router = AppRouter(_loginManager, _appStateManager);
 
   @override
   Widget build(BuildContext context) {

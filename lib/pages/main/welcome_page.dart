@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../models/OnboardingPage.dart';
+import '../../utils/constants.dart';
 import '../../widgets/custome_page_view.dart';
 import '../../widgets/responsive_button.dart';
 import '../state/app_state_manager.dart';
@@ -138,5 +139,6 @@ class _WelcomePageState extends State<WelcomePage> {
 
 void completeOnbording(BuildContext context) {
   Provider.of<LoginManager>(context, listen: false).completeOnboarding();
-  context.go(AppRoutes.home);
+  context.goNamed(AppRoutes.home,
+              params: {AppRoutes.selectedTab: dashboardTabs.first});
 }

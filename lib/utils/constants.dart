@@ -14,3 +14,10 @@ const List coffeeTypes = [
 
 const double buttonHeight = 50;
 EdgeInsets defaultAppPadding = const EdgeInsets.all(10);
+
+const List<String> dashboardTabs = [
+  "home",
+  "cart",
+  "favourites",
+  "notifications"
+];

@@ -55,7 +55,8 @@ class Home extends StatelessWidget {
         backgroundImage: AssetImage('assets/person_1.jpg'),
       ),
       onTap: () {
-        context.goNamed(AppRoutes.profile);
+        context.goNamed(AppRoutes.profile,
+            params: {AppRoutes.selectedTab: dashboardTabs.first});
       },
     );
   }

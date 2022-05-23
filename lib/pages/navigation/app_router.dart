@@ -1,3 +1,4 @@
+import 'package:coffeeapp/pages/coffee_detail/coffee_detail.dart';
 import 'package:coffeeapp/pages/main/dashboard.dart';
 import 'package:coffeeapp/pages/navigation/app_routes.dart';
 import 'package:coffeeapp/pages/profile/profile.dart';
@@ -18,7 +19,6 @@ class AppRouter {
     debugLogDiagnostics: true,
     urlPathStrategy: UrlPathStrategy.path,
     redirect: (state) {
-      
       final onboardingComplete = _loginManager.isOnboardingComplete;
 
       final isOnboarding = state.location == AppRoutes.welcomePage;
@@ -26,7 +26,7 @@ class AppRouter {
       if (!onboardingComplete && !isOnboarding) return AppRoutes.welcomePage;
 
       if (onboardingComplete && isOnboarding) return initialRoute;
-      
+
       return null;
     },
     refreshListenable: _loginManager,
@@ -48,6 +48,11 @@ class AppRouter {
             name: AppRoutes.profile,
             path: AppRoutes.profile,
             builder: (context, state) => const Profile(),
+          ),
+          GoRoute(
+            name: AppRoutes.coffeeDetail,
+            path: AppRoutes.coffeeDetail,
+            builder: (context, state) => const CoffeeDetail(),
           ),
         ],
       ),

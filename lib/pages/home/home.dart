@@ -138,14 +138,19 @@ class Home extends StatelessWidget {
   }
 
   Expanded buildPopularCardList(BuildContext context) {
-    return const Expanded(
+    return Expanded(
       flex: 6,
       child: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: Padding(
-          padding: EdgeInsets.only(right: 10),
-          child: CoffeeGridView(),
+          padding: const EdgeInsets.only(right: 10),
+          child: CoffeeGridView(
+            itemClicked: () {
+              context.goNamed(AppRoutes.coffeeDetail,
+                  params: {AppRoutes.selectedTab: dashboardTabs.first});
+            },
+          ),
         ),
       ),
     );

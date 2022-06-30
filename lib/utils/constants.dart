@@ -21,3 +21,13 @@ const List<String> dashboardTabs = [
   "favourites",
   "notifications"
 ];
+
+const List<String> milkChoices = [
+  "Oat Milk",
+  "Soy Milk",
+  "Almond Milk",
+  "Coconut Milk",
+  "Full Cream Milk"
+];
+
+

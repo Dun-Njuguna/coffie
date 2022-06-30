@@ -27,7 +27,7 @@ class AppTheme {
     ),
     headline4: GoogleFonts.openSans(
       fontSize: 14.0,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
       color: AppColors.lightTextColor,
     ),
     headline6: GoogleFonts.openSans(
@@ -60,7 +60,7 @@ class AppTheme {
     ),
     headline4: GoogleFonts.openSans(
       fontSize: 14.0,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
       color: AppColors.darkTextColor,
     ),
     headline6: GoogleFonts.openSans(
@@ -71,52 +71,52 @@ class AppTheme {
   );
 
   static ButtonThemeData lightButtonTheme = const ButtonThemeData(
-      colorScheme: ColorScheme.dark(
-        primary: AppColors.lightButtonColor,
-        secondary: AppColors.secondaryLightButtonColor,
-      ),
-      textTheme: ButtonTextTheme.normal,
+    colorScheme: ColorScheme.dark(
+      primary: AppColors.lightButtonColor,
+      secondary: AppColors.secondaryLightButtonColor,
+    ),
+    textTheme: ButtonTextTheme.normal,
   );
 
   static ButtonThemeData darkButtonTheme = const ButtonThemeData(
-      colorScheme: ColorScheme.dark(
-        primary: AppColors.darkButtonColor,
-        secondary: AppColors.secondaryDarkButtonColor,
-      ),
-      textTheme: ButtonTextTheme.normal,
+    colorScheme: ColorScheme.dark(
+      primary: AppColors.darkButtonColor,
+      secondary: AppColors.secondaryDarkButtonColor,
+    ),
+    textTheme: ButtonTextTheme.normal,
   );
 
   static ThemeData light() {
     return ThemeData(
-      primaryColor: AppColors.lightMainColor,
-      brightness: Brightness.light,
-      checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateColor.resolveWith((states) {
-          return Colors.black;
-        }),
-      ),
-      appBarTheme: const AppBarTheme(
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.white,
-      ),
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
-      ),
-      navigationBarTheme: const NavigationBarThemeData(
-        backgroundColor: AppColors.lightMainColor,
-        indicatorColor: AppColors.lightButtonColor,
-        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected
-      ),
-      textTheme: lightTextTheme,
-      buttonTheme: lightButtonTheme,
-      scaffoldBackgroundColor: AppColors.lightMainColor
-    );
+        primaryColor: AppColors.lightMainColor,
+        primaryColorDark: AppColors.lightButtonColor,
+        brightness: Brightness.light,
+        checkboxTheme: CheckboxThemeData(
+          fillColor: MaterialStateColor.resolveWith((states) {
+            return Colors.black;
+          }),
+        ),
+        appBarTheme: const AppBarTheme(
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.white,
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.black,
+        ),
+        navigationBarTheme: const NavigationBarThemeData(
+            backgroundColor: AppColors.lightMainColor,
+            indicatorColor: AppColors.darkButtonColor,
+            labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected),
+        textTheme: lightTextTheme,
+        buttonTheme: lightButtonTheme,
+        scaffoldBackgroundColor: AppColors.lightMainColor);
   }
 
   static ThemeData dark() {
     return ThemeData(
       primaryColor: AppColors.darkMainColor,
+      primaryColorDark: AppColors.darkButtonColor,
       brightness: Brightness.dark,
       appBarTheme: AppBarTheme(
         foregroundColor: Colors.white,
@@ -127,10 +127,9 @@ class AppTheme {
         backgroundColor: AppColors.darkMainColor,
       ),
       navigationBarTheme: const NavigationBarThemeData(
-        backgroundColor: AppColors.darkMainColor,
-        indicatorColor: AppColors.darkButtonColor,
-        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected
-      ),
+          backgroundColor: AppColors.darkMainColor,
+          indicatorColor: AppColors.darkButtonColor,
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected),
       textTheme: darkTextTheme,
       buttonTheme: darkButtonTheme,
       scaffoldBackgroundColor: AppColors.darkMainColor,
